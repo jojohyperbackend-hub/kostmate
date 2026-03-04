@@ -708,7 +708,7 @@ function trustGate(raw: string, ctx: ExecCtx): string {
     .replace(/__(.*?)__/g,     "$1")
     .replace(/\*(.*?)\*/g,     "$1")
     .replace(/_(.*?)_/g,       "$1")
-    .replace(/`{1,3}[^`]*`{1,3}/gs, "")
+    .replace(/`{1,3}[^`\n]*`{1,3}/g, "")
     // strip links
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     // strip generic openers

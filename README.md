@@ -73,7 +73,7 @@ src/
 ### 1. Clone repo
 
 ```bash
-git clone https://github.com/username/kostmate.git
+git clone https://github.com/jojohyperbackend-hub/kostmate.git
 cd kostmate
 ```
 
