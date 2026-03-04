@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation"
 import { onUserChanged, logout } from "@/lib/firebase"
 import clsx from "clsx"
 
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 interface Transaksi {
   id: string
@@ -55,7 +57,7 @@ const fadeUp = {
   hidden: { opacity: 0, y: 18 },
   show: (i = 0) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }
+    transition: { duration: 0.42, ease: EASE, delay: i * 0.07 }
   }),
 }
 
@@ -563,7 +565,7 @@ export default function DashboardPage() {
           >
             <motion.div
               initial={{ y: 48, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 48, opacity: 0 }}
-              transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.38, ease: EASE }}
               className="w-full max-w-md bg-[#FAFAF7] rounded-3xl p-6 shadow-2xl"
             >
               <div className="flex items-center justify-between mb-5">
@@ -666,7 +668,7 @@ export default function DashboardPage() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-[#1B3A2D]/60 backdrop-blur-sm flex items-center justify-center p-4">
             <motion.div initial={{ scale: 0.92, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.92, opacity: 0 }}
-              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.28, ease: EASE }}
               className="bg-[#FAFAF7] rounded-3xl p-6 max-w-xs w-full shadow-2xl text-center">
               <div className="w-12 h-12 rounded-2xl bg-[#1B3A2D] flex items-center justify-center mx-auto mb-4">
                 <LogOut size={20} className="text-[#FAFAF7]" />
