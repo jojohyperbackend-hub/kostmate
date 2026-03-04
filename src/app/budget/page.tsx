@@ -35,11 +35,13 @@ const KATEGORI = [
   { value: "lainnya",   label: "Lainnya",        icon: Zap,         suggested: 0.10 },
 ]
 
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
   show: (i = 0) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }
+    transition: { duration: 0.42, ease: EASE, delay: i * 0.07 }
   }),
 }
 
