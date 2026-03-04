@@ -1,5 +1,7 @@
 "use client"
 
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import {
@@ -24,7 +26,7 @@ const fadeUp = {
   show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 },
+    transition: { duration: 0.55, ease: EASE, delay: i * 0.1 },
   }),
 }
 
@@ -163,7 +165,7 @@ export default function LandingPage() {
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: EASE }}
         className="fixed top-0 left-0 right-0 z-50 bg-[#1B3A2D] px-6 md:px-12 py-4 flex items-center justify-between"
       >
         <div className="flex items-center gap-2.5">
@@ -266,7 +268,7 @@ export default function LandingPage() {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
               className="flex-1 w-full max-w-sm mx-auto lg:max-w-none"
             >
               <div className="bg-[#1B3A2D] rounded-3xl p-5 shadow-2xl shadow-[#1B3A2D]/25">
